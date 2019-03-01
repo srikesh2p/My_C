@@ -1,0 +1,60 @@
+->Arrays:
+ > Array is collection of similar type of data items and each data items are called elements of the array. The data type of element may be any valid type like int, char, float. Each element has different index number know as subscrit.
+ > One Dimension has one subscrit, two dimension has two subscrit and so on. One dimension arrays are known as vector and two dimension arrays are know as matrix.
+
+-> Declaration of 1-D array:
+ > Like any simple variables, array should be declared before they are used in the program.
+ > Syntax declaration of array:
+	data_type array_name[size];
+	Array name denote the name of array and it can be any valid C identifier.
+	data_type is the type of elements of array. Size of array specifies the number of elements that can be stored in the array. It may be positive integer constant or constant integer expression.
+ > eg: 
+	int age[100];
+	float salary[15];
+	char grade[20];
+ > Here age is an array of type int which can store 100 element of type int.
+	age[0], age[1],.... age[99]
+ > When array is declared, the compiler allocates space in the memory sufficent to hold the elements of the array, so the size of array should be know at the compile time. Hence we can't use variable for specifying the size of array. Symbolic constants can be used to specify the size of array.
+	#define SIZE 10
+	main()
+	{
+		int size=5;
+		float salary[SIZE];   /* Valid */
+		int mark[size];  /* invalid */
+	}
+
+-> Accessing 1-D Array:
+ > The element of array can be accessed by array name followed by subscript in the bracket. 
+ > In C, the array subscripts start from 0. Hence if the size of array is 5, then the valid subscripts is from 0 to 4.
+ > Last valid subscript is know as upper bound of array and is 0 is lower bound of array.
+ > Subscript can be any integer value. It can be any integer constant, integer variable, integer expression or return value from a function call	eg:arr[30], arr[i], arr[i+j], arr[2*j], arr[i++]
+ > There is no check on bounds of the array. For example, if we have size of array 5, then valid subsripts is from 0 to 4. and if someone try to access the element beyond these scripts  like array[5] ,arr[10]. The compiler will not show any error message but this may lead to run time errors. So it is the responsibity of programer to provide array bound checking wherever needed. This is one disadvantage of c.
+
+-> Processing 1-D Array:
+ > For processing array we generally use a for loop and the loop variable is used at the place of subscript.
+ > Reading values in array:
+ 	for(i=0; i< 10; i++)
+		scanf("%d", &arr[i]);
+ > Writing value in array:
+ 	for(i=0; i<10; i++)
+		printf("%d", arr[i]);
+
+-> Initialization of 1-D array:
+ > After declaration, the element of local array have garabage value. Global and static variable are initialized to 0.
+ > We can explicitly initialize array at the time of declaration.
+ 	int mark[5] = {1, 2, 3, 4, 5};
+ > While initializing 1-D array, it is optional to specify the size of array. If size is omitted during initialization then compiler assumes the size of array equal to the number of initializers.
+ 	float sal[] = {25.5, 38.5, 24.7};
+ > If during initialization number of element is less than the size of array then all remaining elements of array are assigned to 0.
+ 	int mark[3] = {2,5};
+	mark[0] = 2, mark[1] = 5, mark[2] = 0.
+ > If during initialization number of element is more than  than the size of array then compiler will through error.
+ 	arr[5] = {1,2,3,4,5,6,7} /* Error */
+ > We can't copy all the element of array to another array by simply assigning it to other array.
+ 	a[5]={1,2,3};
+	b[5];
+	b=a; /* Not valid */
+ > We have to copy all elements of array one by one using a for loop.
+ 	for(i=0; i<5; i++)
+		b[i]=a[5];
+
