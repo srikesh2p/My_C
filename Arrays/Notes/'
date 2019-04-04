@@ -92,7 +92,7 @@
    	
    }
 
- > We have studied that changes made to formal argument does not affect actual argument, but that is not the case while passing the array to function. When array is passed as an actual argument, the called function get to access the orginal array and works on it, so any changes made inside the function affect the orginal array.
+ > We have studied that changes made to formal parameter does not affect actual parameter, but that is not the case while passing the array to function. When array is passed as an actual argument, the called function get to access the orginal array and works on it, so any changes made inside the function affect the orginal array.
  > Refer program 8_PassingArrayToFun.c
  > Since it is not necessary to mention the size of array in the function definition, we can write general function that can work on aray of same type but different sizes.
  > Refer program 9_ArrayOfDifferentSize.c

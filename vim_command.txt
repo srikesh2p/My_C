@@ -1,0 +1,8 @@
+
+
+>> To see the the file name -CTRL+G
+>> To see the path name – 1 follwed by CTRL+G.
+>> ctags:	
+	sudo apt-get install ctag
+ 	to create ctags -R.
+>> & is command we can't use to name a file

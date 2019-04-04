@@ -1,0 +1,21 @@
+> A pointer to void is generic pointer that can point to any data type. 
+> We can assign address of any data type to a void pointer and void pointer can be assigned to a pointer of any data type with out any explicit casts.
+> Syntax:
+	void *vpt;
+> void is keyword and vpt is declared as pointer of void type.
+>  Assignment of pointer to void pointer:
+	int i=2, *ip=&I;
+  	float f=2.3, *fp=&f;
+ 	 double d;
+  	void *vp;
+  	ip=fp; /* Incorrect */
+	vp=ip; /* correct */
+	vp=fp; /* correct */
+	vp=&d; /* correct */
+> Dereferencing Void POinter:
+	> A void pointer can't be derefernced by using indirection operator. Before dereferncing it should be type casted to appropriate pointer data type.
+	> For example if vp is void pointer holds the address of integer variable then we can't derefernce by writing *vp. We'll have to write 
+	*(int *)vp, where * is derefernced operator and (int *) is used for typecasting.
+	> Similarly pointer arithmetic can't be performed on void pointer with out typecasting.
+	> Refer 26_DereferencingVoidPointer.c and 27_PointerArithmeticInVoidPointer.c
+

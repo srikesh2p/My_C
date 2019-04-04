@@ -1,0 +1,61 @@
+Pointers to functions:
+	> The code of function resides in memory and so every function has address like all other variables in the program. We can get the address of function name just by using the function name with out parentheses. 
+	> See program 34  which illustrates that every function has an address & how to access the address.
+
+Declaring a pointer to a function:
+	> From above we saw function has addresss, so we can have pointer which can contain these addresses and hence point to them.
+	> Syntax for declaration of a pointer to function:
+		return type (*ptr_name) (type1, type2,..);
+	> for example:
+		float (*fp) (int, int);
+		char (*func_p)(float, char);
+	  Here fp is a pointer to any function which returns a float value and accepts an int value as an arument. Similary funct_p is a pointer that can point to any function which returns char and accepts float and char as argument.
+	> The above declaration is similar to function declaration except that pointer name is preceded by star and enclosed in parentheses.
+	Parentheses play important role because if remove parentheses then it will be function returning pointer to float and taking an int value. To avoid that we add parentheses & Parentheses is having higher precedence than * operator.
+
+Assigning function address to pointer:
+	> float (*fp)(int, int); /* Declaring a func pointer */
+	  float func(int, int);  /* Declaring a function */
+	  fp = func;		 /* Assign address of function func to pointer fp */
+	  After the above assignment fp contain the address of function of func().
+
+Calling a function through function pointer:
+	> Invoking a function through function pointer
+		r=func(a,b);  /* calling a function in usual way */
+		r=(*fp)(a,b)  /* calling a function via function pointer */
+		r=fp(a,b)  /* calling a function via function pointer, indirection operator can be omitted */
+	  The effect and result of calling the function by its name or by its function pointer is exactly the same.
+
+	> Refer program 35_InvokeFuncUsingFuncPtr.c.
+
+Passing function address as arument to other function:
+	> We can send the function pointer as argument to other function in the same way as we send other argument.
+	> To receive the function address as argument, a formal parameter of appropriate type should be declared. 
+	> We can invoke the function sent as argument by dereferencing the formal pointer variable.
+	> In program 37_SendPtrContanFuncAddrAsArgumToOtherFunc.c, main() calls the function func(), and the function func()  indirectly calls func() using function pointer.
+	> 37_SendPtrContanFuncAddrAsArgumToOtherFunc.c is program to pass a pointer containing functions address as an argument.
+
+Array of function Pointer:
+	> Function pointer can be used in applications where we donot know in advance which function will be called.
+	> In that case we can take the address of different functions in an array and call the required function depending on some index number.
+	> Declaration of function:
+		float add(float, int);
+		float sub(float, int);
+		float mul(float, int);
+		float div(float, int);
+	> Declaration of array of function pointer:
+		float (*fp[4])(float , int );
+	> Assigning address to the element of array:
+		fp[0]=add;
+		fp[1]=sub;
+		fp[2]=mul;
+		fp[3]=div;
+	> Instead of above statement we could have initialized as:
+		float (*fp[])(float,int)={add, sub, mul, div};
+
+	> Now we can see,
+		(*fp[0](a,b) is equvalent to add(a,b)
+		(*fp[1](a,b) is equvalent to sub(a,b)
+		(*fp[2](a,b) is equvalent to mul(a,b)
+		(*fp[3](a,b) is equvalent to div(a,b)
+

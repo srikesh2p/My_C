@@ -6,7 +6,6 @@ int main(void)
 	printf("Enter the number\n");
 	scanf("%d", &num);
 	int arr[num];
-	k = num;
 	while(num)
 	{
 		num = num % 2;
@@ -15,7 +14,7 @@ int main(void)
 		i++;
 	}
 	printf("Binary value of the decimal %d ", num);
-	for(i = 0; i < k; i++ )
+	for(k = 0; k < i; k++ )
 		printf("%d\n", arr[i]);
 	printf("\n");
 	return 0;

@@ -1,0 +1,13 @@
+> In array, the memory that could be used by program is fixed ie we could not allocate or deallocate memory during the execution of program.
+That means it is must to specify the size of array during declaration, so the size of array will be fixed in run time. 2 types of problem may occur, a) If we have number of values to be stored is less than array size then there will be wastage of memory.
+     b) Our program wiil fails if we want to store more value than the size of array(overfliow).
+> To overcome above problems we should be able to allocate and deallocate memory during run time. The process of allocating memory at the time of execution is called dynamic memory allocation.
+> The allocation and release of memory space can be done using library functions that are declared in stdlib.h.
+> These functions allocate memory from a memory area called heap and deallocate this memory whenever not required, so it can be used again & again for some purpose.
+> Pointers play an important role because we can access the dynamically allocated memory via pointer only.
+
+Malloc():
+	> Declaration: void *malloc(size_t size);
+	The argument size specifies the numner of bytes to be allocated. The type size_t is defined in stdlib.h and other headers as unsigned int. On success, malloc returns a pointer to the first byte of allocated memory. The returned pointer is of void *, which can be typecasted to appropriate type of pointer.
+	> ptr = (datatype *)malloc(specified size);
+	 Here ptr is pointer of type datatype, and specified size is required size to get allocated. The expression (datatype *) is used to typecast the pointer returned by malloc.

@@ -1,0 +1,56 @@
+=> Declaration and Accessing Individual elements of a 2-D array:
+> Here 2 subscripts are there, syntax:
+	data_type arr_name[rowsize][colsize];
+> Total number of element in array is rowsize*colsize.
+> The individual element of array can be accessed by applying two subscripts.
+	For example suppose we have arr declared as
+		int arr[4][5];
+		starting element can be accessed by a[0][0]
+		Last element can be accessed by a[3][4]
+		Total element in array is 20.
+
+=> Processing 2-D arrays:
+> For processing 2-D array we use 2 nested for loops. The outer for loop correspond to for loop and the inner for loop correspond to column.
+> int arr[4][5];
+  Reading values in arr:
+  	for(i=0; i<4; i++)
+  		for(i=0; i<4; i++)
+			scanf("%d", &arr[i][j]);
+
+ Displaying values in arr:
+	for(i=0; i<4; i++)
+  		for(i=0; i<4; i++)
+			printf("%d", &arr[i][j]);
+
+=> Initialization of 2-D array:
+ > 2-D array can be initialized in a way similar to that of 1-D array. For ex:
+  int arr[2][3] = {1,2,3,4,5,6};
+  arr[0][0]=1	arr[0][1]=2 arr[0][2]=3
+  arr[1][0]=4	arr[1][1]=5   arr[1][2]=6
+ > While initializing we can group the elements row wise using inner braces.
+  int arr[3][2] = {{1,2}, {3,4}, {8,9}};
+  int arr[3][2] = {
+  			{1,2},
+			{3,4},
+			{5,6}
+		  };
+
+ > Consider this initialization:
+   int arr[3][2] = {
+  			{2},
+			{3,4},
+			{6}
+		  };
+   Remaining element in each row will be assigned to zero,
+	arr[0][0]=2  arr[0][1]=0
+  	arr[1][0]=3  arr[1][1]=4  
+	arr[2][0]=6  arr[2][1]=0
+
+ > In 2-D array its optional to specify the first dimension while initializing but the 2nd dimension is should always be present.
+	int arr[0][2] = {
+  			{1,2},
+			{3,4},
+			{5,6}
+		  };
+
+
